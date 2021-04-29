@@ -1226,558 +1226,558 @@ function unlockBoostersTab() {
 
 function hardReset() {
     player = {
-        lastUpdate : Date.now(),
-        scrap : new Decimal("0"),
-        bestScraps : new Decimal("0"),
-        scrapsPerClick : new Decimal("1"),
-        scrapsPerSecond : new Decimal("0"),
-        scrapClicks : new Decimal("0"),
-        unmanualScrapClicks : new Decimal("0"),
-        factory : [
-            {
-                cost : new Decimal("10"),
-                costScaling : new Decimal("1.01"),
-                bought : new Decimal("0"),
-                extra : new Decimal("0"),
-            },
-    
-            {
-                cost : new Decimal("1e510"),
-                costScaling : new Decimal("100"),
-                bought : new Decimal("0"),
-                extra : new Decimal("0"),
-            },
-    
-            {
-                cost : new Decimal("10"),
-                costScaling : new Decimal("1.5"),
-                bought : new Decimal("0"),
-                extra : new Decimal("0"),
-            }
-        ],
-        multiplicatorCost : new Decimal("100"),
-        multiplicatorBought : new Decimal("0"),
-        multiplicatorMultiplierBase : new Decimal("3"),
-        multiplicatorCostScaling : new Decimal("4"),
-        goldenScrap : new Decimal("0"),
-        prestigeStat : [
-            new Decimal("0"),
-            new Decimal("0")
-        ],
-        timeSpentInThisPrestige : new Decimal("0"),
-        magnets : new Decimal("0"),
-        magnetsPerClick : new Decimal("1"),
-        gainedMagnets: new Decimal("0"),
-        steelBeams : new Decimal("0"),
-        steelBeamsPerClick : new Decimal("1"),
-        gainedSteelBeams : new Decimal("0"),
-        electrons : new Decimal("0"),
-        protons : new Decimal("0"),
-        stars : {
+    lastUpdate : Date.now(),
+    scrap : new Decimal("0"),
+    bestScraps : new Decimal("0"),
+    scrapsPerClick : new Decimal("1"),
+    scrapsPerSecond : new Decimal("0"),
+    scrapClicks : new Decimal("0"),
+    unmanualScrapClicks : new Decimal("0"),
+    factory : [
+        {
+            cost : new Decimal("10"),
+            costScaling : new Decimal("1.01"),
             bought : new Decimal("0"),
-            cost : new Decimal("1e4"),
-            costScaling : new Decimal("1e15"),
-            multiplierBase : new Decimal("16"),
+            extra : new Decimal("0"),
         },
-        goldenScrapUpgrades : {
-            isBought : [
-                false, false, false, false,
-                false, false, false, false,
-                false, false, false, false,
-                false, false, false, false,
-                false, false, false, false,
-                false, false, false, false,
-                false, false, false, false
-                
-            ],
-            cost : [
-                new Decimal("400"), new Decimal("1e13"), new Decimal("4e50"), new Decimal("2e63"),
-                new Decimal("1e117"), new Decimal("2e186"), new Decimal("1e210"), new Decimal("1e220"),
-                new Decimal("2^1024"), new Decimal("1e350"), new Decimal("1e495"), new Decimal("1e525"),
-                new Decimal("1e552"), new Decimal("2e558"), new Decimal("5e645"), new Decimal("2^2330"),
-                new Decimal("1e1000"), new Decimal("1e1150"), new Decimal("1e1250"), new Decimal("1e1450"),
-                new Decimal("1e1850"), new Decimal("2^6646"), new Decimal("1e2650"), new Decimal("3.2e3200"),
-                new Decimal("1e3320"), new Decimal("1e3380"), new Decimal("1e3450"), new Decimal("1e3500")
-                
-            ],
+
+        {
+            cost : new Decimal("1e510"),
+            costScaling : new Decimal("100"),
+            bought : new Decimal("0"),
+            extra : new Decimal("0"),
         },
-        automator : [
+
+        {
+            cost : new Decimal("10"),
+            costScaling : new Decimal("1.5"),
+            bought : new Decimal("0"),
+            extra : new Decimal("0"),
+        }
+    ],
+    multiplicatorCost : new Decimal("100"),
+    multiplicatorBought : new Decimal("0"),
+    multiplicatorMultiplierBase : new Decimal("3"),
+    multiplicatorCostScaling : new Decimal("4"),
+    goldenScrap : new Decimal("0"),
+    prestigeStat : [
+        new Decimal("0"),
+        new Decimal("0")
+    ],
+    timeSpentInThisPrestige : new Decimal("0"),
+    magnets : new Decimal("0"),
+    magnetsPerClick : new Decimal("1"),
+    gainedMagnets: new Decimal("0"),
+    steelBeams : new Decimal("0"),
+    steelBeamsPerClick : new Decimal("1"),
+    gainedSteelBeams : new Decimal("0"),
+    electrons : new Decimal("0"),
+    protons : new Decimal("0"),
+    stars : {
+        bought : new Decimal("0"),
+        cost : new Decimal("1e4"),
+        costScaling : new Decimal("1e15"),
+        multiplierBase : new Decimal("16"),
+    },
+    goldenScrapUpgrades : {
+        isBought : [
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false
+            
+        ],
+        cost : [
+            new Decimal("400"), new Decimal("1e13"), new Decimal("4e50"), new Decimal("2e63"),
+            new Decimal("1e117"), new Decimal("2e186"), new Decimal("1e210"), new Decimal("1e220"),
+            new Decimal("2^1024"), new Decimal("1e350"), new Decimal("1e495"), new Decimal("1e525"),
+            new Decimal("1e552"), new Decimal("2e558"), new Decimal("5e645"), new Decimal("2^2330"),
+            new Decimal("1e1000"), new Decimal("1e1150"), new Decimal("1e1250"), new Decimal("1e1450"),
+            new Decimal("1e1850"), new Decimal("2^6646"), new Decimal("1e2650"), new Decimal("3.2e3200"),
+            new Decimal("1e3320"), new Decimal("1e3380"), new Decimal("1e3450"), new Decimal("1e3500")
+            
+        ],
+    },
+    automator : [
+        {
+            cost: new Decimal("1e15"),
+            costScaling: new Decimal("1000"),
+            level: new Decimal("0"),
+            maxLevel: new Decimal("eeee40"),
+            dids: new Decimal("0"),
+            baseSpeed: new Decimal("1"),
+            speedPerLevel: new Decimal("1.03"),
+            isActive: false,
+        },
+
+        {
+            cost: new Decimal("1e20"),
+            costScaling: new Decimal("1e20"),
+            level: new Decimal("0"),
+            maxLevel: new Decimal("10"),
+            dids: new Decimal("0"),
+            baseSpeed: new Decimal("1"),
+            speedPerLevel: new Decimal("1.5"),
+            isActive: false
+        }
+    ],//.div(getBoosterPointTypeEffects(1))
+    automator2 : {
+        autoGSUpgrades : false,
+        autoNMU : false,
+        autoNBU : false,
+        autoRBU : false
+    },
+    magnetUpgrades : {
+        repeatable : [
             {
-                cost: new Decimal("1e15"),
-                costScaling: new Decimal("1000"),
-                level: new Decimal("0"),
-                maxLevel: new Decimal("eeee40"),
-                dids: new Decimal("0"),
-                baseSpeed: new Decimal("1"),
-                speedPerLevel: new Decimal("1.03"),
-                isActive: false,
+                levelsBought : new Decimal("0"),
+                extraLevels : new Decimal("0"),
+                cost : new Decimal("1e4"),
+                costScaling : new Decimal("1.5"),
+                requirement : () => {
+                    return player.magnets.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[0].cost)
+                        .div(getBoosterPointTypeEffects(1))
+
+                    ) && player.steelBeams.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[0].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
+                },
+                buySingles : () => {
+                    player.magnets = player.magnets.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[0].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
+                    player.steelBeams = player.steelBeams.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[0].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
+
+                    player.magnetUpgrades.repeatable[0].levelsBought = player.magnetUpgrades.repeatable[0].levelsBought.add(1)
+                },
+                buyMax : () => {
+                    let determineLowest = function() {
+                        if (player.magnets.lte(player.steelBeams)) {
+                            return player.magnets
+                        } else {
+                            return player.steelBeams
+                        }
+                    }
+                    let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[0].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
+                    let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[0].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
+                    player.magnetUpgrades.repeatable[0].levelsBought = player.magnetUpgrades.repeatable[0].levelsBought.add(amounty)
+
+                    player.magnets = player.magnets.minus(pricey)
+                    player.steelBeams = player.steelBeams.minus(pricey)
+
+                    
+                },
+                
             },
-    
+
+
             {
-                cost: new Decimal("1e20"),
-                costScaling: new Decimal("1e20"),
-                level: new Decimal("0"),
-                maxLevel: new Decimal("10"),
-                dids: new Decimal("0"),
-                baseSpeed: new Decimal("1"),
-                speedPerLevel: new Decimal("1.5"),
-                isActive: false
-            }
-        ],//.div(getBoosterPointTypeEffects(1))
-        automator2 : {
-            autoGSUpgrades : false,
-            autoNMU : false,
-            autoNBU : false,
-            autoRBU : false
-        },
-        magnetUpgrades : {
-            repeatable : [
-                {
-                    levelsBought : new Decimal("0"),
-                    extraLevels : new Decimal("0"),
-                    cost : new Decimal("1e4"),
-                    costScaling : new Decimal("1.5"),
-                    requirement : () => {
-                        return player.magnets.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[0].cost)
-                            .div(getBoosterPointTypeEffects(1))
-    
-                        ) && player.steelBeams.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[0].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-                    },
-                    buySingles : () => {
-                        player.magnets = player.magnets.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[0].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-                        player.steelBeams = player.steelBeams.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[0].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-    
-                        player.magnetUpgrades.repeatable[0].levelsBought = player.magnetUpgrades.repeatable[0].levelsBought.add(1)
-                    },
-                    buyMax : () => {
-                        let determineLowest = function() {
-                            if (player.magnets.lte(player.steelBeams)) {
-                                return player.magnets
-                            } else {
-                                return player.steelBeams
-                            }
-                        }
-                        let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[0].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
-                        let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[0].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[0].costScaling, player.magnetUpgrades.repeatable[0].levelsBought)
-                        player.magnetUpgrades.repeatable[0].levelsBought = player.magnetUpgrades.repeatable[0].levelsBought.add(amounty)
-    
-                        player.magnets = player.magnets.minus(pricey)
-                        player.steelBeams = player.steelBeams.minus(pricey)
-    
-                        
-                    },
-                    
+                levelsBought : new Decimal("0"),
+                extraLevels : new Decimal("0"),
+                cost : new Decimal("2e3"),
+                costScaling : new Decimal("1.15"),
+                requirement : () => {
+                    return player.protons.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[1].cost)
+                        .div(getBoosterPointTypeEffects(1))
+
+                    ) && player.electrons.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[1].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
                 },
-    
-    
-                {
-                    levelsBought : new Decimal("0"),
-                    extraLevels : new Decimal("0"),
-                    cost : new Decimal("2e3"),
-                    costScaling : new Decimal("1.15"),
-                    requirement : () => {
-                        return player.protons.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[1].cost)
-                            .div(getBoosterPointTypeEffects(1))
-    
-                        ) && player.electrons.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[1].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-                    },
-                    buySingles : () => {
-                        player.protons = player.protons.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[1].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-                        player.electrons = player.electrons.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[1].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-    
-                        player.magnetUpgrades.repeatable[1].levelsBought = player.magnetUpgrades.repeatable[1].levelsBought.add(1)
-                    },
-                    buyMax : () => {
-                        let determineLowest = function() {
-                            if (player.protons.lte(player.electrons)) {
-                                return player.protons
-                            } else {
-                                return player.electrons
-                            }
-                        }
-                        let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[1].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
-                        let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[1].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
-                        player.magnetUpgrades.repeatable[1].levelsBought = player.magnetUpgrades.repeatable[1].levelsBought.add(amounty)
-                        
-                        player.protons = player.protons.minus(pricey)
-                        player.electrons = player.electrons.minus(pricey)
-    
-                        
-                    },
-                    
+                buySingles : () => {
+                    player.protons = player.protons.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[1].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
+                    player.electrons = player.electrons.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[1].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
+
+                    player.magnetUpgrades.repeatable[1].levelsBought = player.magnetUpgrades.repeatable[1].levelsBought.add(1)
                 },
-    
-                {
-                    levelsBought : new Decimal("0"),
-                    extraLevels : new Decimal("0"),
-                    cost : new Decimal("2.923892e11"),
-                    costScaling : new Decimal("1.15"),
-                    requirement : () => {
-                        return player.magnets.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[2].cost)
-                            .div(getBoosterPointTypeEffects(1))
-    
-                        ) && player.protons.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[2].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                            
-                        )
-                    },
-                    buySingles : () => {
-                        player.magnets = player.magnets.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[2].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                        )
-                        player.protons = player.protons.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[2].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                            
-                        )
-    
-                        player.magnetUpgrades.repeatable[2].levelsBought = player.magnetUpgrades.repeatable[2].levelsBought.add(1)
-                    },
-                    buyMax : () => {
-                        let determineLowest = function() {
-                            if (player.protons.lte(player.magnets)) {
-                                return player.protons
-                            } else {
-                                return player.magnets
-                            }
+                buyMax : () => {
+                    let determineLowest = function() {
+                        if (player.protons.lte(player.electrons)) {
+                            return player.protons
+                        } else {
+                            return player.electrons
                         }
-                        let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[2].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
-                        let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[2].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
-                        player.magnetUpgrades.repeatable[2].levelsBought = player.magnetUpgrades.repeatable[2].levelsBought.add(amounty)
-    
-                        player.magnets = player.magnets.minus(pricey)
-                        player.protons = player.protons.minus(pricey)
-    
-                        
-                    },
-                    
-                },
-    
-                {
-                    levelsBought : new Decimal("0"),
-                    extraLevels : new Decimal("0"),
-                    cost : new Decimal("1e10"),
-                    costScaling : new Decimal("1.15"),
-                    requirement : () => {
-                        return player.steelBeams.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[3].cost)
-                            .div(getBoosterPointTypeEffects(1))
-    
-                        ) && player.electrons.gte(
-                            Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[3].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                            
-                        )
-                    },
-                    buySingles : () => {
-                        player.steelBeams = player.steelBeams.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[3].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                            
-                        )
-                        player.electrons = player.electrons.minus(
-                            Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
-                            .times(player.magnetUpgrades.repeatable[3].cost)
-                            .div(getBoosterPointTypeEffects(1))
-                            
-                        )
-    
-                        player.magnetUpgrades.repeatable[3].levelsBought = player.magnetUpgrades.repeatable[3].levelsBought.add(1)
-                    },
-                    buyMax : () => {
-                        let determineLowest = function() {
-                            if (player.electrons.lte(player.steelBeams)) {
-                                return player.electrons
-                            } else {
-                                return player.steelBeams
-                            }
-                        }
-                        let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[3].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
-                        let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[3].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
-                        player.magnetUpgrades.repeatable[3].levelsBought = player.magnetUpgrades.repeatable[3].levelsBought.add(amounty)
-    
-                        player.steelBeams = player.steelBeams.minus(pricey)
-                        player.electrons = player.electrons.minus(pricey)
-    
-                        
-                    },
-                    
-                },
-    
-                
-    
-                
-            ],
-            nonRepeatable : {
-                requirement : (type) => {
-                    switch (type+1) {
-                        case 1:
-                            return player.magnets.gte(new Decimal(1e4).div(getBoosterPointTypeEffects(1)));
-                        case 2:
-                            return player.steelBeams.gte(new Decimal(1e22).div(getBoosterPointTypeEffects(1)));
-                        case 3:
-                            return player.electrons.gte(new Decimal(3e15).div(getBoosterPointTypeEffects(1)))
-                        case 4:
-                            return player.protons.gte(new Decimal(1e16).div(getBoosterPointTypeEffects(1)))
-                        case 5:
-                            return player.magnets.gte(new Decimal(5e39).div(getBoosterPointTypeEffects(1)))
-                        case 6:
-                            return player.steelBeams.gte(new Decimal(1e42).div(getBoosterPointTypeEffects(1)))
-                        case 7:
-                            return player.electrons.gte(new Decimal(1.2e18).div(getBoosterPointTypeEffects(1)))
-                        case 8:
-                            return player.protons.gte(new Decimal(1.7976931348623157e23).div(getBoosterPointTypeEffects(1)))
-                        case 9:
-                            return player.magnets.gte(new Decimal(9.124e50).div(getBoosterPointTypeEffects(1)))
-                        case 10:
-                            return player.steelBeams.gte(new Decimal(1e63).div(getBoosterPointTypeEffects(1)))
-                        case 11:
-                            return player.electrons.gte(new Decimal(2e25).div(getBoosterPointTypeEffects(1)))
-                        case 12:
-                            return player.protons.gte(new Decimal(1e28).div(getBoosterPointTypeEffects(1)))
-                        case 13:
-                            return player.magnets.gte(new Decimal(8.585e85).div(getBoosterPointTypeEffects(1)))
-                        case 14:
-                            return player.steelBeams.gte(new Decimal("2^350").div(getBoosterPointTypeEffects(1)))
-                        case 15:
-                            return player.electrons.gte(new Decimal(1e35).div(getBoosterPointTypeEffects(1)))
-                        case 16:
-                            return player.protons.gte(new Decimal(1e42).div(getBoosterPointTypeEffects(1)))
                     }
+                    let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[1].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
+                    let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[1].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[1].costScaling, player.magnetUpgrades.repeatable[1].levelsBought)
+                    player.magnetUpgrades.repeatable[1].levelsBought = player.magnetUpgrades.repeatable[1].levelsBought.add(amounty)
+                    
+                    player.protons = player.protons.minus(pricey)
+                    player.electrons = player.electrons.minus(pricey)
+
+                    
                 },
-    
-                buy : (type) => {
-                    switch (type+1) {
-                        case 1:
-                            return player.magnets = player.magnets.minus(new Decimal(1e4).div(getBoosterPointTypeEffects(1)));
-                        case 2:
-                            return player.steelBeams = player.steelBeams.minus(new Decimal(1e22).div(getBoosterPointTypeEffects(1)));
-                        case 3:
-                            return player.electrons = player.electrons.minus(new Decimal(3e15).div(getBoosterPointTypeEffects(1)))
-                        case 4:
-                            return player.protons = player.protons.minus(new Decimal(1e16).div(getBoosterPointTypeEffects(1)))
-                        case 5:
-                            return player.magnets = player.magnets.minus(new Decimal(5e39).div(getBoosterPointTypeEffects(1)));
-                        case 6:
-                            return player.steelBeams = player.steelBeams.minus(new Decimal(1e42).div(getBoosterPointTypeEffects(1)));
-                        case 7:
-                            return player.electrons = player.electrons.minus(new Decimal(1.2e18).div(getBoosterPointTypeEffects(1)))
-                        case 8:
-                            return player.protons = player.protons.minus(new Decimal(1.7976931348623157e23).div(getBoosterPointTypeEffects(1)))
-                        case 9:
-                            return player.magnets = player.magnets.minus(new Decimal(9.124e50).div(getBoosterPointTypeEffects(1)));
-                        case 10:
-                            return player.steelBeams = player.steelBeams.minus(new Decimal(1e63).div(getBoosterPointTypeEffects(1)));
-                        case 11:
-                            return player.electrons = player.electrons.minus(new Decimal(2e25).div(getBoosterPointTypeEffects(1)))
-                        case 12:
-                            return player.protons = player.protons.minus(new Decimal(1e28).div(getBoosterPointTypeEffects(1)))
-                        case 13:
-                            return player.magnets = player.magnets.minus(new Decimal(8.585e85).div(getBoosterPointTypeEffects(1)));
-                        case 14:
-                            return player.steelBeams = player.steelBeams.minus(new Decimal("2^350").div(getBoosterPointTypeEffects(1)));
-                        case 15:
-                            return player.electrons = player.electrons.minus(new Decimal(2e25).div(getBoosterPointTypeEffects(1)))
-                        case 16:
-                            return player.protons = player.protons.minus(new Decimal(1e28).div(getBoosterPointTypeEffects(1)))
-                    }
-                },
-    
-                isBought : [
-                    false, false, false, false,
-                    false, false, false, false,
-                    false, false, false, false,
-                    false, false, false, false
-                ],
-            }
-    
-        },
-        bricks : new Decimal("0"),
-        gainedBricks : new Decimal("0"),
-        wrenches : new Decimal("0"),
-        gainedWrenches : new Decimal("0"),
-        brickUpgrades : {
-            repeatable : {
-                level : [
-                    new Decimal("0"),
-                    new Decimal("0"),
-                    new Decimal("0"),
-                    new Decimal("0")
-                ],
-    
-                costFormula : [
-                    () => Decimal.pow(10, Decimal.pow(1.04, player.brickUpgrades.repeatable.level[0])).times(1e6).div(getRBUDiscount(0)),
-                    () => Decimal.pow(10, Decimal.pow(1.0075, player.brickUpgrades.repeatable.level[1].plus(5).pow(          (player.fuelUpgrades.isBought[1] ? 1.75 : 2)          ) )).times(1e14).div(getRBUDiscount(1)),
-                    () => Decimal.pow(10, Decimal.pow(1.01, player.brickUpgrades.repeatable.level[2].plus(240).pow(1.05))).times(1e17).div(getRBUDiscount(2)),
-                    () => Decimal.pow(10, player.brickUpgrades.repeatable.level[3].plus(3).pow(1.5)).times(1e7).div(getRBUDiscount(3))
-                ],
-    
-                levelGain : [
-                    () => Decimal.log(Decimal.log(player.bricks.div(1e6).times(getRBUDiscount(0)), 10), 1.04).floor(),
-                    () => ((Decimal.log(Decimal.log(player.bricks.div(1e14).times(getRBUDiscount(1)), 10), 1.0075)).pow(          (player.fuelUpgrades.isBought[1] ? 1/1.75 : 1/2)          )).minus(5).floor(),
-                    () => Decimal.log(Decimal.log(player.bricks.div(1e17).times(getRBUDiscount(2)), 10), 1.01).pow(1/1.05).minus(240).floor(),
-                    () => (Decimal.log(player.bricks.div(1e7).times(getRBUDiscount(3)), 10).pow(1/1.5)).minus(3).floor()
-                ]
+                
             },
-    
-            nonRepeatable : {
-                isBought : [
-                    false, false, false, false,
-                    false, false, false, false
-                ],
-    
-                cost : [
-                    new Decimal("1e12"), new Decimal("1e35"), new Decimal("1e45"), new Decimal("2e90"),
-                    new Decimal("1e100"), new Decimal("2e110"), new Decimal("4e120"), new Decimal("8e130")
-                ]
-            }
-        },
-        regenerators : new Decimal("0"),
-        regenPoints : new Decimal("0"),
-        decay : {
-            amount : new Decimal("1"),
-            isInDecayverse : false
-        },
-        superDecay : new Decimal("1"),
-    
-    
-        boosters : new Decimal("0"),
-        bestBoosters : new Decimal("0"),
-        thermalEnergy : new Decimal("0"),
-        fuel : new Decimal("0"),
-        fuelLost : new Decimal("0"),
-        fuelUpgrades : {
-            cost : [
-                new Decimal("80"), new Decimal("95"), new Decimal("110"), new Decimal("125"),
-                new Decimal("1000"), new Decimal("1000"), new Decimal("1000"), new Decimal("1000"),
-                new Decimal("1e100"), new Decimal("1e115"), new Decimal("1e135"), new Decimal("1e250"),
-                new Decimal("1e275"), new Decimal("4.040e404"), new Decimal("6.666e666"), new Decimal("1.111e1111")
-            ],
-    
+
+            {
+                levelsBought : new Decimal("0"),
+                extraLevels : new Decimal("0"),
+                cost : new Decimal("2.923892e11"),
+                costScaling : new Decimal("1.15"),
+                requirement : () => {
+                    return player.magnets.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[2].cost)
+                        .div(getBoosterPointTypeEffects(1))
+
+                    ) && player.protons.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[2].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                        
+                    )
+                },
+                buySingles : () => {
+                    player.magnets = player.magnets.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[2].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                    )
+                    player.protons = player.protons.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[2].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                        
+                    )
+
+                    player.magnetUpgrades.repeatable[2].levelsBought = player.magnetUpgrades.repeatable[2].levelsBought.add(1)
+                },
+                buyMax : () => {
+                    let determineLowest = function() {
+                        if (player.protons.lte(player.magnets)) {
+                            return player.protons
+                        } else {
+                            return player.magnets
+                        }
+                    }
+                    let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[2].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
+                    let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[2].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[2].costScaling, player.magnetUpgrades.repeatable[2].levelsBought)
+                    player.magnetUpgrades.repeatable[2].levelsBought = player.magnetUpgrades.repeatable[2].levelsBought.add(amounty)
+
+                    player.magnets = player.magnets.minus(pricey)
+                    player.protons = player.protons.minus(pricey)
+
+                    
+                },
+                
+            },
+
+            {
+                levelsBought : new Decimal("0"),
+                extraLevels : new Decimal("0"),
+                cost : new Decimal("1e10"),
+                costScaling : new Decimal("1.15"),
+                requirement : () => {
+                    return player.steelBeams.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[3].cost)
+                        .div(getBoosterPointTypeEffects(1))
+
+                    ) && player.electrons.gte(
+                        Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[3].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                        
+                    )
+                },
+                buySingles : () => {
+                    player.steelBeams = player.steelBeams.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[3].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                        
+                    )
+                    player.electrons = player.electrons.minus(
+                        Decimal.pow(player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
+                        .times(player.magnetUpgrades.repeatable[3].cost)
+                        .div(getBoosterPointTypeEffects(1))
+                        
+                    )
+
+                    player.magnetUpgrades.repeatable[3].levelsBought = player.magnetUpgrades.repeatable[3].levelsBought.add(1)
+                },
+                buyMax : () => {
+                    let determineLowest = function() {
+                        if (player.electrons.lte(player.steelBeams)) {
+                            return player.electrons
+                        } else {
+                            return player.steelBeams
+                        }
+                    }
+                    let amounty = Decimal.affordGeometricSeries(determineLowest(), player.magnetUpgrades.repeatable[3].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
+                    let pricey = Decimal.sumGeometricSeries(amounty, player.magnetUpgrades.repeatable[3].cost.div(getBoosterPointTypeEffects(1)), player.magnetUpgrades.repeatable[3].costScaling, player.magnetUpgrades.repeatable[3].levelsBought)
+                    player.magnetUpgrades.repeatable[3].levelsBought = player.magnetUpgrades.repeatable[3].levelsBought.add(amounty)
+
+                    player.steelBeams = player.steelBeams.minus(pricey)
+                    player.electrons = player.electrons.minus(pricey)
+
+                    
+                },
+                
+            },
+
+            
+
+            
+        ],
+        nonRepeatable : {
+            requirement : (type) => {
+                switch (type+1) {
+                    case 1:
+                        return player.magnets.gte(new Decimal(1e4).div(getBoosterPointTypeEffects(1)));
+                    case 2:
+                        return player.steelBeams.gte(new Decimal(1e22).div(getBoosterPointTypeEffects(1)));
+                    case 3:
+                        return player.electrons.gte(new Decimal(3e15).div(getBoosterPointTypeEffects(1)))
+                    case 4:
+                        return player.protons.gte(new Decimal(1e16).div(getBoosterPointTypeEffects(1)))
+                    case 5:
+                        return player.magnets.gte(new Decimal(5e39).div(getBoosterPointTypeEffects(1)))
+                    case 6:
+                        return player.steelBeams.gte(new Decimal(1e42).div(getBoosterPointTypeEffects(1)))
+                    case 7:
+                        return player.electrons.gte(new Decimal(1.2e18).div(getBoosterPointTypeEffects(1)))
+                    case 8:
+                        return player.protons.gte(new Decimal(1.7976931348623157e23).div(getBoosterPointTypeEffects(1)))
+                    case 9:
+                        return player.magnets.gte(new Decimal(9.124e50).div(getBoosterPointTypeEffects(1)))
+                    case 10:
+                        return player.steelBeams.gte(new Decimal(1e63).div(getBoosterPointTypeEffects(1)))
+                    case 11:
+                        return player.electrons.gte(new Decimal(2e25).div(getBoosterPointTypeEffects(1)))
+                    case 12:
+                        return player.protons.gte(new Decimal(1e28).div(getBoosterPointTypeEffects(1)))
+                    case 13:
+                        return player.magnets.gte(new Decimal(8.585e85).div(getBoosterPointTypeEffects(1)))
+                    case 14:
+                        return player.steelBeams.gte(new Decimal("2^350").div(getBoosterPointTypeEffects(1)))
+                    case 15:
+                        return player.electrons.gte(new Decimal(1e35).div(getBoosterPointTypeEffects(1)))
+                    case 16:
+                        return player.protons.gte(new Decimal(1e42).div(getBoosterPointTypeEffects(1)))
+                }
+            },
+
+            buy : (type) => {
+                switch (type+1) {
+                    case 1:
+                        return player.magnets = player.magnets.minus(new Decimal(1e4).div(getBoosterPointTypeEffects(1)));
+                    case 2:
+                        return player.steelBeams = player.steelBeams.minus(new Decimal(1e22).div(getBoosterPointTypeEffects(1)));
+                    case 3:
+                        return player.electrons = player.electrons.minus(new Decimal(3e15).div(getBoosterPointTypeEffects(1)))
+                    case 4:
+                        return player.protons = player.protons.minus(new Decimal(1e16).div(getBoosterPointTypeEffects(1)))
+                    case 5:
+                        return player.magnets = player.magnets.minus(new Decimal(5e39).div(getBoosterPointTypeEffects(1)));
+                    case 6:
+                        return player.steelBeams = player.steelBeams.minus(new Decimal(1e42).div(getBoosterPointTypeEffects(1)));
+                    case 7:
+                        return player.electrons = player.electrons.minus(new Decimal(1.2e18).div(getBoosterPointTypeEffects(1)))
+                    case 8:
+                        return player.protons = player.protons.minus(new Decimal(1.7976931348623157e23).div(getBoosterPointTypeEffects(1)))
+                    case 9:
+                        return player.magnets = player.magnets.minus(new Decimal(9.124e50).div(getBoosterPointTypeEffects(1)));
+                    case 10:
+                        return player.steelBeams = player.steelBeams.minus(new Decimal(1e63).div(getBoosterPointTypeEffects(1)));
+                    case 11:
+                        return player.electrons = player.electrons.minus(new Decimal(2e25).div(getBoosterPointTypeEffects(1)))
+                    case 12:
+                        return player.protons = player.protons.minus(new Decimal(1e28).div(getBoosterPointTypeEffects(1)))
+                    case 13:
+                        return player.magnets = player.magnets.minus(new Decimal(8.585e85).div(getBoosterPointTypeEffects(1)));
+                    case 14:
+                        return player.steelBeams = player.steelBeams.minus(new Decimal("2^350").div(getBoosterPointTypeEffects(1)));
+                    case 15:
+                        return player.electrons = player.electrons.minus(new Decimal(2e25).div(getBoosterPointTypeEffects(1)))
+                    case 16:
+                        return player.protons = player.protons.minus(new Decimal(1e28).div(getBoosterPointTypeEffects(1)))
+                }
+            },
+
             isBought : [
                 false, false, false, false,
                 false, false, false, false,
                 false, false, false, false,
                 false, false, false, false
-            ]
-        },
-        savingMilestones : {
-            requirement : [
-                new Decimal("1"), new Decimal("4"), new Decimal("9"), new Decimal("16"),
-                new Decimal("32"), new Decimal("64"), new Decimal("256"), new Decimal("5000"),
-                new Decimal("5e9"), new Decimal("5e11"), new Decimal("1e50"), new Decimal("1e130"),
-                new Decimal("1e750")
             ],
-            isGotten : [
-                false, false, false, false,
-                false, false, false, false,
-                false, false, false, false,
-                false
+        }
+
+    },
+    bricks : new Decimal("0"),
+    gainedBricks : new Decimal("0"),
+    wrenches : new Decimal("0"),
+    gainedWrenches : new Decimal("0"),
+    brickUpgrades : {
+        repeatable : {
+            level : [
+                new Decimal("0"),
+                new Decimal("0"),
+                new Decimal("0"),
+                new Decimal("0")
+            ],
+
+            costFormula : [
+                () => Decimal.pow(10, Decimal.pow(1.04, player.brickUpgrades.repeatable.level[0])).times(1e6).div(getRBUDiscount(0)),
+                () => Decimal.pow(10, Decimal.pow(1.0075, player.brickUpgrades.repeatable.level[1].plus(5).pow(          (player.fuelUpgrades.isBought[1] ? 1.75 : 2)          ) )).times(1e14).div(getRBUDiscount(1)),
+                () => Decimal.pow(10, Decimal.pow(1.01, player.brickUpgrades.repeatable.level[2].plus(240).pow(1.05))).times(1e17).div(getRBUDiscount(2)),
+                () => Decimal.pow(10, player.brickUpgrades.repeatable.level[3].plus(3).pow(1.5)).times(1e7).div(getRBUDiscount(3))
+            ],
+
+            levelGain : [
+                () => Decimal.log(Decimal.log(player.bricks.div(1e6).times(getRBUDiscount(0)), 10), 1.04).floor(),
+                () => ((Decimal.log(Decimal.log(player.bricks.div(1e14).times(getRBUDiscount(1)), 10), 1.0075)).pow(          (player.fuelUpgrades.isBought[1] ? 1/1.75 : 1/2)          )).minus(5).floor(),
+                () => Decimal.log(Decimal.log(player.bricks.div(1e17).times(getRBUDiscount(2)), 10), 1.01).pow(1/1.05).minus(240).floor(),
+                () => (Decimal.log(player.bricks.div(1e7).times(getRBUDiscount(3)), 10).pow(1/1.5)).minus(3).floor()
             ]
         },
-        transformedBoosters : [
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0")
+
+        nonRepeatable : {
+            isBought : [
+                false, false, false, false,
+                false, false, false, false
+            ],
+
+            cost : [
+                new Decimal("1e12"), new Decimal("1e35"), new Decimal("1e45"), new Decimal("2e90"),
+                new Decimal("1e100"), new Decimal("2e110"), new Decimal("4e120"), new Decimal("8e130")
+            ]
+        }
+    },
+    regenerators : new Decimal("0"),
+    regenPoints : new Decimal("0"),
+    decay : {
+        amount : new Decimal("1"),
+        isInDecayverse : false
+    },
+    superDecay : new Decimal("1"),
+
+
+    boosters : new Decimal("0"),
+    bestBoosters : new Decimal("0"),
+    thermalEnergy : new Decimal("0"),
+    fuel : new Decimal("0"),
+    fuelLost : new Decimal("0"),
+    fuelUpgrades : {
+        cost : [
+            new Decimal("80"), new Decimal("95"), new Decimal("110"), new Decimal("125"),
+            new Decimal("1000"), new Decimal("1000"), new Decimal("1000"), new Decimal("1000"),
+            new Decimal("1e100"), new Decimal("1e115"), new Decimal("1e135"), new Decimal("1e250"),
+            new Decimal("1e275"), new Decimal("4.040e404"), new Decimal("6.666e666"), new Decimal("1.111e1111")
         ],
-    
-        boosterPoints : [
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0"),
-            new Decimal("0")
-        ],
-    
-        boosterChallenges : {
-            isActive : [
-                false, false,
-                false, false,
-                false, false,
-                false, false
-            ],
-            bestScraps : [
-                new Decimal("0"), new Decimal("0"),
-                new Decimal("0"), new Decimal("0"),
-                new Decimal("0"), new Decimal("0"),
-                new Decimal("0"), new Decimal("0")
-            ],
-            completionFormula : [
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[0].max(1), "1e1150").pow(0.5)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[1].max(1), "1e250").pow(0.25)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[2].max(1), "1e1500").pow(0.3)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[3].max(1), "1e185000").pow(0.3)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[4].max(1), "1e5050").pow(0.35)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[5].max(1), "1e80").pow(0.3)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[6].max(1), "1e500000").pow(0.3)},
-                function() {return Decimal.log(player.boosterChallenges.bestScraps[7].max(1), "e7e6").pow(0.3)},
-            ],
-            scrapDivider : [
-                new Decimal("9.371e127"), new Decimal("1e200"),
-                new Decimal("2^900"), new Decimal("1e91"),
-                new Decimal("3^194"), new Decimal("1e500"),
-                new Decimal("1e123"), new Decimal("e94000"),
-            ]
-        },
-    
-        options : {
-            notation : "scientific",
-            confirmations : {
-                prestige : true,
-                compression : true,
-            }
-        },
-    
-        achievementsGotten : [
-            false,false,false,false,false,false,false,
-            false,false,false,false,false,false,false,
-            false,false,false,false,false,false,false,
-            false,false,false,false,false
+
+        isBought : [
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false
         ]
-    
-    }
+    },
+    savingMilestones : {
+        requirement : [
+            new Decimal("1"), new Decimal("4"), new Decimal("9"), new Decimal("16"),
+            new Decimal("32"), new Decimal("64"), new Decimal("256"), new Decimal("5000"),
+            new Decimal("5e9"), new Decimal("5e11"), new Decimal("1e50"), new Decimal("1e130"),
+            new Decimal("1e750")
+        ],
+        isGotten : [
+            false, false, false, false,
+            false, false, false, false,
+            false, false, false, false,
+            false
+        ]
+    },
+    transformedBoosters : [
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0")
+    ],
+
+    boosterPoints : [
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0"),
+        new Decimal("0")
+    ],
+
+    boosterChallenges : {
+        isActive : [
+            false, false,
+            false, false,
+            false, false,
+            false, false
+        ],
+        bestScraps : [
+            new Decimal("0"), new Decimal("0"),
+            new Decimal("0"), new Decimal("0"),
+            new Decimal("0"), new Decimal("0"),
+            new Decimal("0"), new Decimal("0")
+        ],
+        completionFormula : [
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[0].max(1), "1e1150").pow(0.5)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[1].max(1), "1e250").pow(0.25)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[2].max(1), "1e1500").pow(0.3)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[3].max(1), "1e185000").pow(0.3)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[4].max(1), "1e4750").pow(0.35)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[5].max(1), "1e80").pow(0.3)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[6].max(1), "1e500000").pow(0.3)},
+            function() {return Decimal.log(player.boosterChallenges.bestScraps[7].max(1), "e7e6").pow(0.3)},
+        ],
+        scrapDivider : [
+            new Decimal("9.371e127"), new Decimal("1e200"),
+            new Decimal("2^900"), new Decimal("1e91"),
+            new Decimal("3^194"), new Decimal("1e500"),
+            new Decimal("1e123"), new Decimal("e94000"),
+        ]
+    },
+
+    options : {
+        notation : "scientific",
+        confirmations : {
+            prestige : true,
+            compression : true,
+        }
+    },
+
+    achievementsGotten : [
+        false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false,
+        false,false,false,false,false,false,false
+    ]
+
+}
     save();
     load();
     tab("production");
@@ -2131,6 +2131,7 @@ function updateText() {
     document.getElementById("FuelCost13").innerHTML = format(player.fuelUpgrades.cost[12], 3, 0)
     document.getElementById("FuelCost14").innerHTML = format(player.fuelUpgrades.cost[13], 3, 0)
     document.getElementById("FuelCost15").innerHTML = format(player.fuelUpgrades.cost[14], 3, 0)
+    document.getElementById("FuelCost16").innerHTML = format(player.fuelUpgrades.cost[15], 3, 0)
 
     /*
     
