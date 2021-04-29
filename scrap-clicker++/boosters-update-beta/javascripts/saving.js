@@ -41,13 +41,13 @@ function isDecimal(x) {
 var savegame;
 
 function save() {
-    localStorage.setItem("scrap-clicker++", JSON.stringify(player));
+    localStorage.setItem("scrap-clicker-plusplus-beta", JSON.stringify(player));
     notifier.success("Game Saved!")
 }
 
 function load() {
-  if (localStorage.getItem("scrap-clicker++")) {
-    savegame = JSON.parse(localStorage.getItem("scrap-clicker++"));
+  if (localStorage.getItem("scrap-clicker-plusplus-beta")) {
+    savegame = JSON.parse(localStorage.getItem("scrap-clicker-plusplus-beta"));
     objectToDecimal(savegame);
     merge(player, savegame);
   }
