@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="games, idle, incremental, world, restoration, bullzmade"/>
+    <meta name="description" content="Is it possible to fill this whole multiverse with forks?">
+    <title>World Restoration Bullzmade</title>
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/anchor.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/achievements.css">
+    <link rel="stylesheet" type="text/css" href="css/automation.css">
+    <link rel="stylesheet" type="text/css" href="css/precious-forks.css">
+    <link rel="stylesheet" type="text/css" href="css/changelog.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/upgrades.css">
+    <link rel="stylesheet" type="text/css" href="css/modals.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/tooltip.css">
+    <link rel="stylesheet" type="text/css" href="css/yes_and_no_buttons.css">
+</head>
+<body>
+    <div style="display: none">
+        <canvas id="paintingCanvas" style="position: fixed; z-index: -1;"></canvas><!--Painting Canvas xd-->
+    </div>
+    <div class="tabButtons">
+        <button class="buttonTab button" onclick="tab('BeforeLife')">Before Life</button>
+        <button class="buttonTab button" onclick="tab('PrestigeLayers')">Prestige Layers</button>
+        <button id="AutomationTabButton" class="buttonTab button" onclick="tab('Automation')">Automation</button>
+        <button class="buttonTab button" onclick="tab('Achievements')">Achievements</button>
+        <button class="buttonTab button" onclick="tab('Settings')">More</button>
+    </div>
+    
+    <br>
+    <center>
+        
+        <span id="RepelledForks" class="bigger"></span> <img src="images/fork.png" alt="Fork Image" width="40" height="40"></span><br><br>
+        <button class="button" onclick="maxAllFRs()">Max All Fork Repellents</button><br><br>
+        
+
+        <div id="BeforeLife">
+            <div class="tabButtons">
+                <button id="mainBeforeLifeSubtabButton" class="button" onclick="beforeLifeSubTab('subBeforeLife1')">Main</button>
+                <button id="preciousForksSubtabButton" class="button" onclick="beforeLifeSubTab('subBeforeLife2')">Precious forks</button>
+            </div><br>
+
+            <div id="subBeforeLife1">
+                <table style="border-spacing: 5px;">
+                    <tr>
+                        <td id="FR1" class="forkRepellentTableCell">Fork Repellent 1<br><span id="FRDetails1"></span><br><br><button onclick="buyForkRepellents('singles', 0)" id="BuyFRButton1">Requires<br><span id="ForksRequired1"></span> forks</button></td>
+                        <td id="FR2" class="forkRepellentTableCell">Fork Repellent 2<br><span id="FRDetails2"></span><br><br><button onclick="buyForkRepellents('singles', 1)" id="BuyFRButton2">Requires<br><span id="ForksRequired2"></span> forks</button></td>
+                        <td id="FR3" class="forkRepellentTableCell">Fork Repellent 3<br><span id="FRDetails3"></span><br><br><button onclick="buyForkRepellents('singles', 2)" id="BuyFRButton3">Requires<br><span id="ForksRequired3"></span> forks</button></td>
+                        <td id="FR4" class="forkRepellentTableCell">Fork Repellent 4<br><span id="FRDetails4"></span><br><br><button onclick="buyForkRepellents('singles', 3)" id="BuyFRButton4">Requires<br><span id="ForksRequired4"></span> forks</button></td>
+                    </tr>
+                    <tr>
+                        <td id="FR5" class="forkRepellentTableCell">Fork Repellent 5<br><span id="FRDetails5"></span><br><br><button onclick="buyForkRepellents('singles', 4)" id="BuyFRButton5">Requires<br><span id="ForksRequired5"></span> forks</button></td>
+                        <td id="FR6" class="forkRepellentTableCell">Fork Repellent 6<br><span id="FRDetails6"></span><br><br><button onclick="buyForkRepellents('singles', 5)" id="BuyFRButton6">Requires<br><span id="ForksRequired6"></span> forks</button></td>
+                        <td id="FR7" class="forkRepellentTableCell">Fork Repellent 7<br><span id="FRDetails7"></span><br><br><button onclick="buyForkRepellents('singles', 6)" id="BuyFRButton7">Requires<br><span id="ForksRequired7"></span> forks</button></td>
+                        <td id="FR8" class="forkRepellentTableCell">Fork Repellent 8<br><span id="FRDetails8"></span><br><br><button onclick="buyForkRepellents('singles', 7)" id="BuyFRButton8">Requires<br><span id="ForksRequired8"></span> forks</button></td>
+                    </tr>
+                    <tr>
+                        <td id="FR9" class="forkRepellentTableCell">Fork Repellent 9<br><span id="FRDetails9"></span><br><br><button onclick="buyForkRepellents('singles', 8)" id="BuyFRButton9">Requires<br><span id="ForksRequired9"></span> forks</button></td>
+                        <td id="FR10" class="forkRepellentTableCell">Fork Repellent 10<br><span id="FRDetails10"></span><br><br><button onclick="buyForkRepellents('singles', 9)" id="BuyFRButton10">Requires<br><span id="ForksRequired10"></span> forks</button></td>
+                        <td id="FR11" class="forkRepellentTableCell">Fork Repellent 11<br><span id="FRDetails11"></span><br><br><button onclick="buyForkRepellents('singles', 10)" id="BuyFRButton11">Requires<br><span id="ForksRequired11"></span> forks</button></td>
+                        <td id="FR12" class="forkRepellentTableCell">Fork Repellent 12<br><span id="FRDetails12"></span><br><br><button onclick="buyForkRepellents('singles', 11)" id="BuyFRButton12">Requires<br><span id="ForksRequired12"></span> forks</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="subBeforeLife2">
+                <div id="PreciousForksLockedText" style="position: relative; top: 100px;"><span style="font-size: 30px;">LOCKED</span><br>This feature will be unlocked when you reached <span id="PreciousForkUnlockRequirement"></span> <br></div>
+
+                <div id="PreciousForksScreen">
+                    You have <span id="PreciousForks" class="preciousForkText">0</span> Precious Forks (PF)<br>
+                    (+<span id="PreciousForksPerSecond"></span>/s) (generated by your Forks)<br><br>
+                    <span style="font-size: 25px;"><strong>PF Effects (PFE)</strong></span><br><br>
+                    PF effect strength: <span id="PFEffectStrength"></span><br>
+                    All PFE marked with (reduced) will have <span id="ReducedPFEffectStrength"></span> strength<br><br>
+                    <div id="NextPFE"><br>Have at least 1 Precious Extension to get your first PFE</div>
+                    <div class="pfeffect-container">
+                        
+                        <div id="PFEffect1" class="pfeffect">
+                            <strong>PF Effect 1</strong><br><br>
+                            PF boosts your Fork gain by <span id="PFEffectBoost1"></span>x
+                        </div>
+                        <div id="PFEffect2" class="pfeffect">
+                            <strong>PF Effect 2</strong><br><br>
+                            PF boosts your Key gain by <span id="PFEffectBoost2"></span>x
+                        </div>
+                        <div id="PFEffect3" class="pfeffect">
+                            <strong>PF Effect 3</strong><br><br>
+                            PF boosts your Empowered Cake gain by <span id="PFEffectBoost3"></span>x
+                        </div>
+                        <div id="PFEffect4" class="pfeffect">
+                            <strong>PF Effect 4</strong><br><br>
+                            PF boosts your PF gain by <span id="PFEffectBoost4"></span>x
+                        </div>
+                        <div id="PFEffect5" class="pfeffect">
+                            <strong>PF Effect 5</strong><br><br>
+                            PF boosts your Karma gain by <span id="PFEffectBoost5"></span>x
+                        </div>
+                        <div id="PFEffect6" class="pfeffect">
+                            <strong>PF Effect 6 (reduced)</strong><br><br>
+                            PF boosts your SW of 4th RCU by <span id="PFEffectBoost6"></span>x
+                        </div>
+                        <div id="PFEffect7" class="pfeffect">
+                            <strong>PF Effect 7 (reduced)</strong><br><br>
+                            PF raises your 3rd RCU effect ^<span id="PFEffectBoost7"></span>
+                        </div>
+                        <div id="PFEffect8" class="pfeffect">
+                            <strong>PF Effect 8</strong><br><br>
+                            PF boosts your cake gain by <span id="PFEffectBoost8"></span>x
+                        </div>
+                        <div id="PFEffect9" class="pfeffect">
+                            <strong>PF Effect 9</strong><br><br>
+                            They cheapen Karma requirement of Precious Extension by /<span id="PFEffectBoost9"></span>
+                        </div>
+                        <div id="PFEffect10" class="pfeffect">
+                            <strong>PF Effect 10</strong><br><br>
+                            PF boosts Justice Point gain by <span id="PFEffectBoost10"></span>x
+                        </div>
+                        <div id="PFEffect11" class="pfeffect">
+                            <strong>PF Effect 11 (reduced)</strong><br><br>
+                            PF makes Cakes and Empowered Cakes boost each other in gain at rate of<br>
+                            <span style="font-size: 13px;">log<sub>2</sub>(x + 2)<sup><span id="PFEffectBoost11"></span></sup></span>
+                        </div>
+                        <div id="PFEffect12" class="pfeffect">
+                            <strong>PF Effect 12 (reduced)</strong><br><br>
+                            PF raises Achievement 35 & 36 reward effect ^<span id="PFEffectBoost12"></span>
+                        </div>
+                    </div>
+                    
+                    <br><br><br><br><br>
+                    You have <span id="PreciousExtensions" class="preciousForkText">0</span> Precious Extensions<br>
+                    They are boosting your PF gain by <span id="PreExtensionEffect1"></span>x<br>
+                    and are boosting PF effect strength by <span id="PreExtensionEffect2"></span>x<br><br>
+                    Scaling Weakness: <span id="PreciousExtensionSW"></span>%<br>
+                    <button class="button" onclick="buyPreciousExtension('singles')">Buy a Precious Extension<br>Requires<br><span id="PreciousExtensionReq1"></span> Karma &<br><span id="PreciousExtensionReq2"></span> Precious Forks</button><br><br>
+                    <button class="button" onclick="buyPreciousExtension('max')">Buy Max</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="PrestigeLayers">
+            <div class="tabButtons">
+                <button id="newEpisodeSubtabButton" class="button normalPrestigeButton" onclick="prestigeSubTab('NewEpisode')">New Episode</button>
+                <button id="newCakeAtStakeSubtabButton" class="button normalPrestigeButton" onclick="prestigeSubTab('NewCakeAtStake')">New Cake at Stake</button>
+                <button id="newContestSubtabButton" class="button normalPrestigeButton" onclick="prestigeSubTab('NewContest')">New Contest</button>
+            </div><br>
+
+
+            <div id="NewEpisode">
+                You have <span id="KeyAmount" class="bigger2"></span> Keys (<span id="GainedKeyAmount"></span> Keys gained)<br>
+                <span id="NewEpisodeAmount"></span> New Episodes<br><br>
+                <button class="normalPrestigeButton" onclick="prestige(0)">Start a New Episode<br>for <span id="PendingKeys"></span> Keys</button><br><br><br>
+
+                <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+                <span style="font-size: 25px;"><strong>Repeatable New Episode Upgrades (RNEU)</strong></span>
+                <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30"><br><br>
+
+                <button class="button" onclick="maxAllRNEUs()">Max All RNEUs</button><br><br>
+                <table>
+                    <tr id="RNEUScalingWeaknesses">
+                        <td>Scaling Weakness (SW):<br><span id="RNEUScalingWeakness1"></span>%</td>
+                        <td>Scaling Weakness (SW):<br><span id="RNEUScalingWeakness2"></span>%</td>
+                        <td>Scaling Weakness (SW):<br><span id="RNEUScalingWeakness3"></span>%</td>
+                    </tr>
+                    <tr>
+                        <td><button id="RNEUpgrade1" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableNEUpgrade(0, 'singles')">Keys boost its gain<br>Req: <span id="RNEUpgradeCost1"></span> Keys<br>Level: <span id="RNEUpgradeLevel1"></span><br>Currently: <span id="RNEUpgradeEffect1"></span>x</button></td>
+                        <td><button id="RNEUpgrade2" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableNEUpgrade(1, 'singles')">1st NNEU effect is stronger<br>Req: <span id="RNEUpgradeCost2"></span> Keys<br>Level: <span id="RNEUpgradeLevel2"></span><br>Currently: ^<span id="RNEUpgradeEffect2"></span></button></td>
+                        <td><button id="RNEUpgrade3" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableNEUpgrade(2, 'singles')">Forks boost key gain<br>Req: <span id="RNEUpgradeCost3"></span> Keys<br>Level: <span id="RNEUpgradeLevel3"></span><br>Currently: <span id="RNEUpgradeEffect3"></span>x</button></td>
+                    </tr>
+                </table><br>
+
+                <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+                <span style="font-size: 25px;"><strong>Normal New Episode Upgrades (NNEU)</strong></span>
+                <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30"><br>
+
+                <table>
+                    <tr id="NNEURow1">
+                        <td><button id="NNEUpgrade1" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(0)">Gained keys boost fork gain<br>Currently: <span id="NNEUpgradeEffect1"></span>x<br><br>Cost: <span id="NNEUpgradeCost1"></span> Keys</button></td>
+                        <td><button id="NNEUpgrade2" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(1)">FRs boost fork gain<br>Currently: <span id="NNEUpgradeEffect2"></span>x<br><br>Cost: <span id="NNEUpgradeCost2"></span> Keys</button></td>
+                        <td><button id="NNEUpgrade3" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(2)">Forks boost key gain<br>Currently: <span id="NNEUpgradeEffect3"></span>x<br><br>Cost: <span id="NNEUpgradeCost3"></span> Keys</button></td>
+                        <td><button id="NNEUpgrade4" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(3)">Forks power up 3rd NNEU effect<br>Currently: ^<span id="NNEUpgradeEffect4"></span><br><br>Cost: <span id="NNEUpgradeCost4"></span> Keys</button></td>
+                    </tr>
+                    <tr id="NNEURow2">
+                        <td><button id="NNEUpgrade5" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(4)">Forks boost SW of all RNEUs<br>Currently: <span id="NNEUpgradeEffect5"></span>x<br><br>Cost: <span id="NNEUpgradeCost5"></span> Keys</button></td>
+                        <td><button id="NNEUpgrade6" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(5)">1st RNEU levels power up 3rd RNEU effect<br>Currently: ^<span id="NNEUpgradeEffect6"></span><br><br>Cost: <span id="NNEUpgradeCost6"></span> Keys</button></td>
+                        <td><button id="NNEUpgrade7" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(6)">Keys power up 2nd NNEU effect<br>Currently: ^<span id="NNEUpgradeEffect7"></span><br><br>Cost: <span id="NNEUpgradeCost7"></span> Keys</button></td>
+                        <td><button id="NNEUpgrade8" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalNEUpgrade(7)">Keys power up 3rd NNEU effect<br>Currently: ^<span id="NNEUpgradeEffect8"></span><br><br>Cost: <span id="NNEUpgradeCost8"></span> Keys</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="NewCakeAtStake">
+                <div id="NCaSLockedText" style="position: relative; top: 100px;"><span style="font-size: 30px;">LOCKED</span><br>This feature will be unlocked when you reached <span id="PrestigeLayerUnlockRequirement1"></span><br></div>
+
+                <div id="NCaSScreen">
+                    <div class="tabButtons">
+                        <button id="mainNCaSSubtabButton" class="button normalPrestigeButton" onclick="NCaSSubTab('subNCaS1')">Main</button>
+                        <button id="empCakesSubtabButton" class="button normalPrestigeButton" onclick="NCaSSubTab('subNCaS2')">Empowered Cakes</button>
+                    </div><br>
+                    <div id="subNCaS1">
+                        You have <span id="CakeAmount" class="bigger2"></span> Cakes (<span id="GainedCakeAmount"></span> Cakes gained)<br>
+                        <span id="NewCakeatStakeAmount"></span> New Cake at Stake<br><br>
+                        <button class="normalPrestigeButton" onclick="prestige(1)">Start a New Cake at Stake<br>for <span id="PendingCakes"></span> Cakes</button><br><br><br>
+
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+                        <span style="font-size: 25px;"><strong>Repeatable Cake Upgrades (RCU)</strong></span>
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30"><br><br>
+
+                        <button class="button" onclick="maxAllRCUs()">Max All RCUs</button><br><br>
+                        <table>
+                            <tr>
+                                <td>Scaling Weakness (SW):<br><span id="RCUScalingWeakness1"></span>%</td>
+                                <td>Scaling Weakness (SW):<br><span id="RCUScalingWeakness2"></span>%</td>
+                                <td>Scaling Weakness (SW):<br><span id="RCUScalingWeakness3"></span>%</td>
+                                <td>Scaling Weakness (SW):<br><span id="RCUScalingWeakness4"></span>%</td>
+                            </tr>
+                            <tr>
+                                <td><button id="RCUpgrade1" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableCakeUpgrade(0, 'singles')">Gain keys on prestige over time<br>Req: <span id="RCUpgradeCost1"></span> Cakes<br>Level: <span id="RCUpgradeLevel1"></span><br>Currently: +<span id="RCUpgradeEffect1"></span>%/s</button></td>
+                                <td><button id="RCUpgrade2" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableCakeUpgrade(1, 'singles')">Keys boost cake gain<br>Req: <span id="RCUpgradeCost2"></span> Cakes<br>Level: <span id="RCUpgradeLevel2"></span><br>Currently: <span id="RCUpgradeEffect2"></span>x</button></td>
+                                <td><button id="RCUpgrade3" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableCakeUpgrade(2, 'singles')">Cakes boost its gain<br>Req: <span id="RCUpgradeCost3"></span> Cakes<br>Level: <span id="RCUpgradeLevel3"></span><br>Currently: <span id="RCUpgradeEffect3"></span>x</button></td>
+                                <td><button id="RCUpgrade4" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableCakeUpgrade(3, 'singles')">1st NCU effect is stronger<br>Req: <span id="RCUpgradeCost4"></span> Cakes<br>Level: <span id="RCUpgradeLevel4"></span><br>Currently: ^<span id="RCUpgradeEffect4"></span></button></td>
+                            </tr>
+                        </table><br>
+
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+                        <span style="font-size: 25px;"><strong>Normal Cake Upgrades (NCU)</strong></span>
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+
+                        <table>
+                            <tr id="NCURow1">
+                                <td><button id="NCUpgrade1" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(0)">Gained cakes boost key gain<br>Currently: <span id="NCUpgradeEffect1"></span>x<br><br>Cost: <span id="NCUpgradeCost1"></span> Cakes</button></td>
+                                <td><button id="NCUpgrade2" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(1)">Forks boost its gain<br>Currently: <span id="NCUpgradeEffect2"></span>x<br><br>Cost: <span id="NCUpgradeCost2"></span> Cakes</button></td>
+                                <td><button id="NCUpgrade3" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(2)">Gained cakes boost SW of 1st and 3rd RNEUs<br>Currently: <span id="NCUpgradeEffect3"></span>x<br><br>Cost: <span id="NCUpgradeCost3"></span> Cakes</button></td>
+                                <td><button id="NCUpgrade4" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(3)">1st RNEU levels power up its effect<br>Currently: ^<span id="NCUpgradeEffect4"></span><br><br>Cost: <span id="NCUpgradeCost4"></span> Cakes</button></td>
+                            </tr>
+                            <tr id="NCURow2">
+                                <td><button id="NCUpgrade5" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(4)">Cakes boost empowered cake gain<br>Currently: <span id="NCUpgradeEffect5"></span>x<br><br>Cost: <span id="NCUpgradeCost5"></span> Cakes</button></td>
+                                <td><button id="NCUpgrade6" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(5)">Forks boost its gain<br>Currently: <span id="NCUpgradeEffect6"></span>x<br><br>Cost: <span id="NCUpgradeCost6"></span> Cakes</button></td>
+                                <td><button id="NCUpgrade7" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(6)">Cakes and Empowered cakes boost each other<br>To Cake gain: <span id="NCUpgradeEffect7.1"></span>x<br>To Empowered Cake gain: <span id="NCUpgradeEffect7.2"></span>x<br><br>Cost: <span id="NCUpgradeCost7"></span> Cakes</button></td>
+                                <td><button id="NCUpgrade8" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalCakeUpgrade(7)">Empowered Cakes cheapens 2nd and 3rd RCU requirements<br>Currently: /<span id="NCUpgradeEffect8"></span><br><br>Cost: <span id="NCUpgradeCost8"></span> Cakes</button></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="subNCaS2">
+                        <div id="EmpCakesLockedText" style="position: relative; top: 100px;"><span style="font-size: 30px;">LOCKED</span><br>This feature will be unlocked when you reached <span id="EmpCakesUnlockRequirement"></span><br></div>
+
+                        <div id="EmpCakesScreen">
+                            You have <span id="EmpCakeAmount" class="bigger2"></span> Empowered Cakes<br>
+                            They are making keys boost its gain by <span id="EmpCakeEffect"></span>x<br><br>
+                            Next Empowered Cake at <span id="NextEmpCake" class="bigger2"></span> Keys<br><br><br>
+                            <button class="button normalPrestigeButton tooltip" onclick="enableDisableBrakeAtFlake()"><span id="BaFButtonText"></span><span class="tooltiptext">1st NCU effect is useless</span></button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="NewContest">
+                <div id="NCLockedText" style="position: relative; top: 100px;"><span style="font-size: 30px;">LOCKED</span><br>This feature will be unlocked when you reached <span id="PrestigeLayerUnlockRequirement2"></span> <br></div>
+
+                <div id="NCScreen">
+                    <div class="tabButtons">
+                        <button id="mainNewContestSubtabButton" class="button normalPrestigeButton" onclick="NCSubTab('subNC1')">Main</button>
+                        <button id="theJudgementSubtabButton" class="button normalPrestigeButton" onclick="NCSubTab('subNC2')">The Judgement</button>
+                    </div><br>
+
+                    <div id="subNC1">
+                        You have <span id="KarmaAmount" class="bigger2"></span> Karma (<span id="GainedKarmaAmount"></span> Karma gained)<br>
+                        <span id="NewContestAmount"></span> New Contests<br><br>
+                        <button class="normalPrestigeButton" onclick="prestige(2)">Start a New Contest<br>for <span id="PendingKarma"></span> Karma</button><br><br><br>
+
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+                        <span style="font-size: 25px;"><strong>Repeatable Karma Upgrades (RKaU)</strong></span>
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30"><br><br>
+
+                        <button class="button" onclick="maxAllRKaUs()">Max All RKaUs</button><br><br>
+                        <table>
+                            <tr>
+                                <td>Scaling Weakness (SW):<br><span id="RKaUScalingWeakness1"></span>%</td>
+                                <td>Scaling Weakness (SW):<br><span id="RKaUScalingWeakness2"></span>%</td>
+                                <td>Scaling Weakness (SW):<br><span id="RKaUScalingWeakness3"></span>%</td>
+                                <td>Scaling Weakness (SW):<br><span id="RKaUScalingWeakness4"></span>%</td>
+                            </tr>
+                            <tr>
+                                <td><button id="RKaUpgrade1" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableKarmaUpgrade(0, 'singles')">Gain cakes on prestige over time<br>Req: <span id="RKaUpgradeCost1"></span> Karma<br>Level: <span id="RKaUpgradeLevel1"></span><br>Currently: +<span id="RKaUpgradeEffect1"></span>%/s</button></td>
+                                <td><button id="RKaUpgrade2" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableKarmaUpgrade(1, 'singles')">Cakes boost karma gain<br>Req: <span id="RKaUpgradeCost2"></span> Karma<br>Level: <span id="RKaUpgradeLevel2"></span><br>Currently: <span id="RKaUpgradeEffect2"></span>x</button></td>
+                                <td><button id="RKaUpgrade3" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableKarmaUpgrade(2, 'singles')">Karma boost its gain<br>Req: <span id="RKaUpgradeCost3"></span> Karma<br>Level: <span id="RKaUpgradeLevel3"></span><br>Currently: <span id="RKaUpgradeEffect3"></span>x</button></td>
+                                <td><button id="RKaUpgrade4" class="repeatablePrestigeUpgrade repeatablePrestigeUpgradeIsAffordable" onclick="buyRepeatableKarmaUpgrade(3, 'singles')">Boost PF gain by <span id="RKaUpgradeEffect4.1"></span>x<br>Req: <span id="RKaUpgradeCost4"></span> Karma<br>Level: <span id="RKaUpgradeLevel4"></span><br>Currently: <span id="RKaUpgradeEffect4.2"></span>x</button></td>
+                            </tr>
+                        </table><br>
+
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+                        <span style="font-size: 25px;"><strong>Normal Karma Upgrades (NKaU)</strong></span>
+                        <img src="images/upgrade.png" alt="Upgrade Image" width="30" height="30">
+
+                        <table>
+                            <tr id="NKaURow1">
+                                <td><button id="NKaUpgrade1" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(0)">Gained Karma boost cakes<br>Currently: <span id="NKaUpgradeEffect1"></span>x<br><br>Cost: <span id="NKaUpgradeCost1"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade2" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(1)">Karma cheapens all RCU requirements<br>Currently: /<span id="NKaUpgradeEffect2"></span><br><br>Cost: <span id="NKaUpgradeCost2"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade3" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(2)">3rd RCU levels power up all 7th NCU effects<br>Currently: ^<span id="NKaUpgradeEffect3"></span><br><br>Cost: <span id="NKaUpgradeCost3"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade4" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(3)">3rd RCU levels power up 5th NCU effect<br>Currently: ^<span id="NKaUpgradeEffect4"></span><br><br>Cost: <span id="NKaUpgradeCost4"></span> Karma</button></td>
+                            </tr>
+                            <tr id="NKaURow2">
+                                <td><button id="NKaUpgrade5" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(4)">Precious Forks boost Karma gain<br>Currently: <span id="NKaUpgradeEffect5"></span>x<br><br>Cost: <span id="NKaUpgradeCost5"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade6" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(5)">4th PFE is raised ^<span id="NKaUpgradeEffect6"></span><br><br>Cost: <span id="NKaUpgradeCost6"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade7" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(6)">1st PFE is raised ^<span id="NKaUpgradeEffect7"></span><br><br>Cost: <span id="NKaUpgradeCost7"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade8" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(7)">Karma cheapen Karma requirement of Precious Extension<br>Currently: /<span id="NKaUpgradeEffect8"></span><br><br>Cost: <span id="NKaUpgradeCost8"></span> Karma</button></td>
+                            </tr>
+                            <tr id="NKaURow3">
+                                <td><button id="NKaUpgrade9" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(8)">1st RNEU levels power up 1st RNEU effect and 3rd RNEU effect<br>Currently: ^<span id="NKaUpgradeEffect9"></span><br><br>Cost: <span id="NKaUpgradeCost9"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade10" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(9)">Forks boost SW of all RNEUs<br>Currently: <span id="NKaUpgradeEffect10"></span>x<br><br>Cost: <span id="NKaUpgradeCost10"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade11" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(10)">Karma boost Justice Point gain<br>Currently: <span id="NKaUpgradeEffect11"></span>x<br><br>Cost: <span id="NKaUpgradeCost11"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade12" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(11)">Justice points generate themselves<br>Currently: +<span id="NKaUpgradeEffect12"></span>%/s<br><br>Cost: <span id="NKaUpgradeCost12"></span> Karma</button></td>
+                            </tr>
+                            <tr id="NKaURow4">
+                                <td><button id="NKaUpgrade13" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(12)">Karma and Justice Points boost each other in gain<br>To Karma gain: <span id="NKaUpgradeEffect13.1"></span>x<br>To JP gain: <span id="NKaUpgradeEffect13.2"></span>x<br><br>Cost: <span id="NKaUpgradeCost13"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade14" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(13)">Karma boost multiplier base of 4th RKaU<br>Currently: <span id="NKaUpgradeEffect14"></span>x<br><br>Cost: <span id="NKaUpgradeCost14"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade15" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(14)">Forks power up 1st and 3rd RNEU effects<br>Currently: <span id="NKaUpgradeEffect15"></span>x<br><br>Cost: <span id="NKaUpgradeCost15"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade16" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(15)">Achievement 42 reward effect and all Justice Point effect is raised ^<span id="NKaUpgradeEffect16"></span><br><br>Cost: <span id="NKaUpgradeCost16"></span> Karma</button></td>
+                            </tr>
+                            <tr id="NKaURow5">
+                                <td><button id="NKaUpgrade17" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(16)">Boost SW of Precious Extension by <span id="NKaUpgradeEffect17"></span>x<br><br>Cost: <span id="NKaUpgradeCost17"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade18" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(17)">Justice Points power up Justice Point effect to Karma Requirement of Precious Extension<br>Currently: ^<span id="NKaUpgradeEffect18"></span><br><br>Cost: <span id="NKaUpgradeCost18"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade19" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(18)">Karma powers up 8th NKaU effect<br>Currently: ^<span id="NKaUpgradeEffect19"></span><br><br>Cost: <span id="NKaUpgradeCost19"></span> Karma</button></td>
+                                <td><button id="NKaUpgrade20" class="prestigeUpgrade prestigeUpgradeIsAffordable" onclick="buyNormalKarmaUpgrade(19)">Karma powers up 14th NKaU effect<br>Currently: ^<span id="NKaUpgradeEffect20"></span><br><br>Cost: <span id="NKaUpgradeCost20"></span> Karma</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id="subNC2">
+                        <div id="TheJudgementLockedText" style="position: relative; top: 100px;"><span style="font-size: 30px;">LOCKED</span><br>This feature will be unlocked when you reached <span id="TheJudgementUnlockRequirement"></span><br></div>
+
+                        <div id="TheJudgementScreen">
+                            You have <span id="JusticePointAmount" class="bigger2">0</span> Justice Points<br>
+                            They are boosting your Karma gain by <span id="JusticePointEffect1"></span>x<br>
+                            and are dividing Karma requirement of Precious Extension by /<span id="JusticePointEffect2"></span><br><br>
+                            <button class="button normalPrestigeButton tooltip" onclick="enableDisableTheJudgement()"><span id="TheJudgementButtonText"></span><span class="tooltiptext">Fork, Key, Cake and Empowered Cake gain boosts are heavily weakened</span></button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Automation">
+            <div class="automation-container">
+                <div class="automator">
+                    <div id="AutomatorText1">Auto-FRs: <input type="checkbox" id="AutomatorActivation1" onclick="player.automator.autoFRs.isActive = document.getElementById('AutomatorActivation1').checked"></div>
+                    <button id="AutomatorUnlock1" class="button" onclick="automationUnlock('Auto-FRs')">Unlock Auto-FRs<br>Req: <span id="AutomatorReq1"></span> Karma</button>
+                </div>
+                <div class="automator">
+                    <div id="AutomatorText2">Auto-RNEUs: <input type="checkbox" id="AutomatorActivation2" onclick="player.automator.autoRNEUs.isActive = document.getElementById('AutomatorActivation2').checked"></div>
+                    <button id="AutomatorUnlock2" class="button" onclick="automationUnlock('Auto-RNEUs')">Unlock Auto-RNEUs<br>Req: <span id="AutomatorReq2"></span> Karma</button>
+                </div>
+                <div class="automator">
+                    <div id="AutomatorText3">Auto-NNEUs: <input type="checkbox" id="AutomatorActivation3" onclick="player.automator.autoNNEUs.isActive = document.getElementById('AutomatorActivation3').checked"></div>
+                    <button id="AutomatorUnlock3" class="button" onclick="automationUnlock('Auto-NNEUs')">Unlock Auto-RNEUs<br>Req: <span id="AutomatorReq3"></span> Karma</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="Achievements">
+            <div class="tabButtons">
+                <button id="" class="button" onclick="achievementsSubTab('subAchievements1')">Achievements</button>
+                <button id="" class="button" onclick="achievementsSubTab('subAchievements2')">Achievement Rewards</button>
+            </div>
+            <div id="subAchievements1">
+                <div>Your achievements boost your fork gain by <span id="AchievementMultiplier" class="rainbow" style="font-size: 25px;"></span>x</div><br>
+                <div style="height: 65px; max-height: 65px; position: sticky; top: -1px; background-color: #000000;">
+                    <div id="achievementTitle">Hover over the achievements to see details</div>
+                    <div id="achievementDescription"><br></div>
+                    <div id="achievementReward"><br></div>
+                </div>
+                <table class="achievementTable">
+                    <tr>
+                        <td id="Achievement1" class="achievementLocked" onmouseover="setHoveredAchValue(0)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">1</span><!--1--></div></td>
+                        <td id="Achievement2" class="achievementLocked" onmouseover="setHoveredAchValue(1)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">2</span><!--2--></div></td>
+                        <td id="Achievement3" class="achievementLocked" onmouseover="setHoveredAchValue(2)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">3</span><!--3--></div></td>
+                        <td id="Achievement4" class="achievementLocked" onmouseover="setHoveredAchValue(3)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">4</span><!--4--></div></td>
+                        <td id="Achievement5" class="achievementLocked" onmouseover="setHoveredAchValue(4)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">5</span><!--5--></div></td>
+                        <td id="Achievement6" class="achievementLocked" onmouseover="setHoveredAchValue(5)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">6</span><!--6--></div></td>
+                        <td id="Achievement7" class="achievementLocked" onmouseover="setHoveredAchValue(6)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">7</span><!--7--></div></td>
+                    </tr>
+                    <tr>
+                        <td id="Achievement8" class="achievementLocked" onmouseover="setHoveredAchValue(7)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">8</span><!--8--></div></td>
+                        <td id="Achievement9" class="achievementLocked" onmouseover="setHoveredAchValue(8)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">9</span><!--9--></div></td>
+                        <td id="Achievement10" class="achievementLocked" onmouseover="setHoveredAchValue(9)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">10</span><!--10--></div></td>
+                        <td id="Achievement11" class="achievementLocked" onmouseover="setHoveredAchValue(10)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">11</span><!--11--></div></td>
+                        <td id="Achievement12" class="achievementLocked" onmouseover="setHoveredAchValue(11)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">12</span><!--12--></div></td>
+                        <td id="Achievement13" class="achievementLocked" onmouseover="setHoveredAchValue(12)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">13</span><!--13--></div></td>
+                        <td id="Achievement14" class="achievementLocked" onmouseover="setHoveredAchValue(13)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">14</span><!--14--></div></td>
+                    </tr>
+                    <tr>
+                        <td id="Achievement15" class="achievementLocked" onmouseover="setHoveredAchValue(14)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">15</span><!--15--></div></td>
+                        <td id="Achievement16" class="achievementLocked" onmouseover="setHoveredAchValue(15)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">16</span><!--16--></div></td>
+                        <td id="Achievement17" class="achievementLocked" onmouseover="setHoveredAchValue(16)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">17</span><!--17--></div></td>
+                        <td id="Achievement18" class="achievementLocked" onmouseover="setHoveredAchValue(17)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">18</span><!--18--></div></td>
+                        <td id="Achievement19" class="achievementLocked" onmouseover="setHoveredAchValue(18)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">19</span><!--19--></div></td>
+                        <td id="Achievement20" class="achievementLocked" onmouseover="setHoveredAchValue(19)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">20</span><!--20--></div></td>
+                        <td id="Achievement21" class="achievementLocked" onmouseover="setHoveredAchValue(20)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">21</span><!--21--></div></td>
+                    </tr>
+                    <tr>
+                        <td id="Achievement22" class="achievementLocked" onmouseover="setHoveredAchValue(21)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">22</span><!--22--></div></td>
+                        <td id="Achievement23" class="achievementLocked" onmouseover="setHoveredAchValue(22)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">23</span><!--23--></div></td>
+                        <td id="Achievement24" class="achievementLocked" onmouseover="setHoveredAchValue(23)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">24</span><!--24--></div></td>
+                        <td id="Achievement25" class="achievementLocked" onmouseover="setHoveredAchValue(24)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">25</span><!--25--></div></td>
+                        <td id="Achievement26" class="achievementLocked" onmouseover="setHoveredAchValue(25)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">26</span><!--26--></div></td>
+                        <td id="Achievement27" class="achievementLocked" onmouseover="setHoveredAchValue(26)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">27</span><!--27--></div></td>
+                        <td id="Achievement28" class="achievementLocked" onmouseover="setHoveredAchValue(27)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">28</span><!--28--></div></td>
+                    </tr>
+                    <tr>
+                        <td id="Achievement29" class="achievementLocked" onmouseover="setHoveredAchValue(28)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">29</span><!--29--></div></td>
+                        <td id="Achievement30" class="achievementLocked" onmouseover="setHoveredAchValue(29)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">30</span><!--30--></div></td>
+                        <td id="Achievement31" class="achievementLocked" onmouseover="setHoveredAchValue(30)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">31</span><!--31--></div></td>
+                        <td id="Achievement32" class="achievementLocked" onmouseover="setHoveredAchValue(31)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">32</span><!--32--></div></td>
+                        <td id="Achievement33" class="achievementLocked" onmouseover="setHoveredAchValue(32)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">33</span><!--33--></div></td>
+                        <td id="Achievement34" class="achievementLocked" onmouseover="setHoveredAchValue(33)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">34</span><!--34--></div></td>
+                        <td id="Achievement35" class="achievementLocked" onmouseover="setHoveredAchValue(34)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">35</span><!--35--></div></td>
+                    </tr>
+                    <tr>
+                        <td id="Achievement36" class="achievementLocked" onmouseover="setHoveredAchValue(35)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">36</span><!--36--></div></td>
+                        <td id="Achievement37" class="achievementLocked" onmouseover="setHoveredAchValue(36)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">37</span><!--37--></div></td>
+                        <td id="Achievement38" class="achievementLocked" onmouseover="setHoveredAchValue(37)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">38</span><!--38--></div></td>
+                        <td id="Achievement39" class="achievementLocked" onmouseover="setHoveredAchValue(38)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">39</span><!--39--></div></td>
+                        <td id="Achievement40" class="achievementLocked" onmouseover="setHoveredAchValue(39)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">40</span><!--40--></div></td>
+                        <td id="Achievement41" class="achievementLocked" onmouseover="setHoveredAchValue(40)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">41</span><!--41--></div></td>
+                        <td id="Achievement42" class="achievementLocked" onmouseover="setHoveredAchValue(41)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">42</span><!--42--></div></td>
+                    </tr>
+                    <tr>
+                        <td id="Achievement43" class="achievementLocked" onmouseover="setHoveredAchValue(42)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">43</span><!--43--></div></td>
+                        <td id="Achievement44" class="achievementLocked" onmouseover="setHoveredAchValue(43)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">44</span><!--44--></div></td>
+                        <td id="Achievement45" class="achievementLocked" onmouseover="setHoveredAchValue(44)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">45</span><!--45--></div></td>
+                        <td id="Achievement46" class="achievementLocked" onmouseover="setHoveredAchValue(45)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">46</span><!--46--></div></td>
+                        <td id="Achievement47" class="achievementLocked" onmouseover="setHoveredAchValue(46)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">47</span><!--47--></div></td>
+                        <td id="Achievement48" class="achievementLocked" onmouseover="setHoveredAchValue(47)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">48</span><!--48--></div></td>
+                        <td id="Achievement49" class="achievementLocked" onmouseover="setHoveredAchValue(48)" onmouseout="normalizeAchThings()"><div>Achievement<br><br><span style="font-size: 20px;">49</span><!--49--></div></td>
+                    </tr>
+                </table> 
+            </div>
+            <div id="subAchievements2">
+                <div style="font-size: 25px;"><strong>Achievement Rewards</strong></div><br>
+
+                <div class="achievementReward-container" id="AchRewardDisplay2">
+                    Achievement 2 reward:<br><br>
+                    Boost fork gain by <span id="AchRewardEffect2"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay8">
+                    Achievement 8 reward:<br><br>
+                    Raise 2nd NNEU effect ^<span id="AchRewardEffect8"></span>
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay9">
+                    Achievement 9 reward:<br><br>
+                    Forks power up achievement effect<br><br>
+                    Currently: ^<span id="AchRewardEffect9"></span>
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay12">
+                    Achievement 12 reward:<br><br>
+                    Forks boost key gain<br><br>
+                    Currently: <span id="AchRewardEffect12"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay16">
+                    Achievement 16 reward:<br><br>
+                    Forks power up achievement effect<br><br>
+                    Currently: ^<span id="AchRewardEffect16"></span>
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay24">
+                    Achievement 24 reward:<br><br>
+                    Achievements power up achievement effect<br><br>
+                    Currently: ^<span id="AchRewardEffect24"></span>
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay26">
+                    Achievement 26 reward:<br><br>
+                    Boost PFE strength by <span id="AchRewardEffect26"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay27">
+                    Achievement 27 reward:<br><br>
+                    Boost PFE strength by <span id="AchRewardEffect27"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay28">
+                    Achievement 28 reward:<br><br>
+                    Boost PFE strength by <span id="AchRewardEffect28"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay33">
+                    Achievement 33 reward:<br><br>
+                    Precious Forks cheapen PF requirement of Precious Extension<br><br>
+                    Currently: /<span id="AchRewardEffect33"></span>
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay34">
+                    Achievement 34 reward:<br><br>
+                    Karma cheapen Karma requirement of Precious Extension<br><br>
+                    Currently: /<span id="AchRewardEffect34"></span>
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay35">
+                    Achievement 35 reward:<br><br>
+                    Karma and Precious Forks boost each other in gain<br><br>
+                    To Karma gain: <span id="AchRewardEffect35.1"></span>x<br>
+                    To Precious Fork gain: <span id="AchRewardEffect35.2"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay36">
+                    Achievement 36 reward:<br><br>
+                    Karma and Precious Forks boost each other in gain<br><br>
+                    To Karma gain: <span id="AchRewardEffect36.1"></span>x<br>
+                    To Precious Fork gain: <span id="AchRewardEffect36.2"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay37">
+                    Achievement 37 reward:<br><br>
+                    Automatically gain Empowered Cakes without entering BaF at reduced rate<br><br>
+                    Currently: <span id="AchRewardEffect37"></span>x auto rate
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay38">
+                    Achievement 38 reward:<br><br>
+                    Precious Extensions boost PFE strength<br><br>
+                    Currently: <span id="AchRewardEffect38"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay39">
+                    Achievement 39 reward:<br><br>
+                    Buying Precious Extensions no longer resets your Precious Forks
+                    <!--<span id="AchRewardEffect39"></span>-->
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay40">
+                    Achievement 40 reward:<br><br>
+                    Empowered Cakes boost Cake gain<br><br>
+                    Currently: <span id="AchRewardEffect40"></span>x
+                </div>
+                <div class="achievementReward-container" id="AchRewardDisplay42">
+                    Achievement 42 reward:<br><br>
+                    Karma boost Justice Point gain<br><br>
+                    Currently: <span id="AchRewardEffect42"></span>x
+                </div>
+            </div>
+        </div>
+
+        <div id="Settings">
+            <div class="tabButtons">
+                <button class="button" onclick="settingsSubTab('subSettings1')">Settings</button>
+                <button class="button" onclick="settingsSubTab('subSettings2')">About</button>
+                <button class="button" onclick="settingsSubTab('subSettings3')">Changelog & Updates</button>
+                <button class="button" onclick="settingsSubTab('subSettings4')">Credits</button>
+            </div>
+            
+
+            <br>
+            
+
+            <div id="subSettings1">
+                <button class="button" onclick="save()">Save</button>
+                <button class="button" onclick="confirmHardReset()">Hard Reset</button>
+                <button class="button" onclick="document.getElementById('saveText').value = exportSave()">Export</button>
+                <button class="button" onclick="importSave(prompt('Insert your save.'))">Import</button><br>
+                <textarea style="resize: none; width: 30%; height: 100px;" id="saveText" placeholder="Your exported save should appear here">Your exported save should appear here</textarea><br>
+                Notation : <select id="notationSelect" style="transition-duration: 0.2s; border-width: 3px; border-color: rgba(128, 128, 128, 255);" onchange="player.options.notation = document.getElementById('notationSelect').value">
+                    <option value="scientific">Scientific</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="true-scientific">True scientific</option>
+                    <option value="true-engineering">True engineering</option>
+                    <option value="standard">Standard</option>
+                    <!--<option value="long-standard">Long standard</option>-->
+                </select>
+            </div>
+
+            <div id="subSettings2">
+                <div style="font-size: 25px;"><strong>World Restoration Bullzmade</strong></div><br>
+                    This game is continued version of original one<br>
+                    This game also has extra contents<br><br>
+                    <nav>
+                        <a href="https://soul147.github.io/World%20Restoration/" target="_blank">Original game (soul147)</a> |
+                        <a href="https://www.youtube.com/channel/UC4D_JX8Z2HboHvlcKjSqOYA?view_as=subscriber" target="_blank">My YouTube Channel</a> |
+                        <a href="https://github.com/Patashu/break_eternity.js/tree/master" target="_blank">Break Eternity (by Patashu)</a> |
+                        <a href="https://www.patreon.com/Bullz04" target="_blank">Patreon</a><br><br>
+                        <a href="https://discord.gg/aggGeRc" target="_blank">Join My Discord</a>
+                    </nav>
+                
+            </div>
+
+            <div id="subSettings3">
+                <center><div style="font-size: 25px;"><strong>Changelog</strong></div></center><br>
+                Click/Tap the <span style="border: 2px solid rgb(255, 255, 255)">white-bordered box</span> to see the changelog<br><br>
+
+                <div class="changelog-container" onclick="hideAndShow('v1.0.0')">
+                    <span style="font-size: 25px;" ><strong>December 3rd, 2021 v1.0.0</strong></span><br>
+                    <span id="v1.0.0" style="display: none;"><br>
+                        <strong style="font-size: 25px;">New</strong><br>
+                        Created the game
+                    </span>
+                </div>
+                <!--<div>09-03-2020 v0.1:<br>Improved the saving system, Added some GS upgrades and stars.</div><br>
+                <div>08-28-2020 v0.0:<br>Created the game.</div>-->
+            </div>
+
+            <div id="subSettings4">
+                <div style="font-size: 25px;"><strong>Credits</strong></div><br>
+                Insipiration:<br>
+                <a href="https://soul147.github.io/World%20Restoration/" target="_blank">soul147's World Restoration</a> for original contents.<br>
+                <a href="https://ivark.github.io/" target="_blank">Hevipelle's Antimatter Dimensions</a> for polynomial growth.<br>
+                <a href="https://jacorb90.github.io/DistInc.github.io/main.html" target="_blank">Jacorb's Distance Incremental</a> for softcap things.
+                <br><br>
+                Game:<br>
+                <a href="https://github.com/Patashu/break_eternity.js/tree/master" target="_blank">Break Eternity.js  by Patashu</a> for making numbers able to go past 1.797e308.<br>
+                
+            </div>
+        </div>
+    </center>
+</body>
+<script src="javascripts/libraries/break_eternity.js"></script>
+<script src="javascripts/saving.js"></script>
+<script src="javascripts/loop.js"></script>
+<script src="javascripts/achievements.js"></script>
+<script src="javascripts/automation.js"></script>
+<script src="javascripts/canvas.js"></script>
+<script src="javascripts/tab-system.js"></script>
+<script src="javascripts/format.js"></script>
+<script src="javascripts/show-and-unlock.js"></script>
+<script src="javascripts/hide-show.js"></script>
+<script src="javascripts/seed.js"></script>
+<script src="javascripts/fork-repellents.js"></script>
+<script src="javascripts/precious-forks.js"></script>
+<script src="javascripts/prestige-layers/1-new-episode.js"></script>
+<script src="javascripts/prestige-layers/2-new-cake-at-stake.js"></script>
+<script src="javascripts/prestige-layers/3-new-contest.js"></script>
+<script src="javascripts/game.js"></script>
+
+</html>
