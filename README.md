@@ -1,2 +1,2 @@
 # scrap-clicker-plus-plus
- Don't modify anything or the game wouldn't run properly
+ This is my repo of all games I made :)
