@@ -1,0 +1,22 @@
+.pfeffect-container {
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.pfeffect {
+    width: 250px;
+    height: 165px;
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid rgb(192, 0, 255);
+    border-radius: 5px;
+}
+
+.preciousForkText {
+    font-size: 30px;
+    color: rgb(192, 0, 255)
+}
