@@ -49,7 +49,7 @@ function getTotalFRs() {
 
 function unlockForkRepellents() {
     let getFRsUnlocked = function() {
-        if (player.karma.gt(0) || player.gainedKarma.gt(0) || player.prestigeStat[1].gt(0)) {
+        if (player.karma.gt(0) || player.gainedKarma.gt(0) || player.prestigeStat[2].gt(0)) {
             return 12
         } else if (player.cakes.gt(0) || player.gainedCakes.gt(0) || player.prestigeStat[1].gt(0)) {
             return 8
