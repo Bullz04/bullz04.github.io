@@ -1,5 +1,6 @@
 class Player {
     constructor() {
+        this.version = "v1.0.1"
         this.lastUpdate = Date.now()
         this.repelledForks = new Decimal(0)
         this.preciousForks = new Decimal(0)
